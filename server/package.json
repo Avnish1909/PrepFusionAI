@@ -1,0 +1,29 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "@langchain/openai": "^1.4.7",
+    "chromadb": "^3.4.3",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "langchain": "^1.4.2",
+    "mongoose": "^9.1.5",
+    "multer": "^2.1.1",
+    "nodemon": "^3.1.11",
+    "openai": "^6.39.0",
+    "pdfjs-dist": "^5.7.284",
+    "pdfkit": "^0.17.2",
+    "stripe": "^20.3.1"
+  }
+}

@@ -1,0 +1,127 @@
+.upload-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.panel-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.step-badge {
+  background: var(--accent-dim);
+  color: var(--accent-bright);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  padding: 2px 7px;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+.drop-zone {
+  border: 2px dashed var(--border);
+  border-radius: 12px;
+  padding: 32px 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.25s;
+  background: var(--bg-card);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.drop-zone:hover, .drop-zone.dragging {
+  border-color: var(--accent);
+  background: rgba(108,99,255,0.06);
+  box-shadow: 0 0 24px rgba(108,99,255,0.15);
+}
+
+.drop-zone.disabled { opacity: 0.5; cursor: not-allowed; }
+
+.dz-icon {
+  font-size: 2rem;
+  color: var(--accent);
+  margin-bottom: 4px;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.dz-title {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+.dz-sub {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+
+.dz-hint {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  margin-top: 8px;
+  letter-spacing: 0.5px;
+}
+
+.file-loaded {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.file-icon { font-size: 2rem; }
+
+.file-info { flex: 1; overflow: hidden; }
+
+.file-name {
+  font-weight: 600;
+  font-size: 0.88rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--text-primary);
+}
+
+.file-status {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.status-processing { color: var(--amber); }
+.status-ready { color: var(--teal); }
+.status-error { color: var(--red); }
+
+.spinner {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 2px solid var(--amber-dim);
+  border-top-color: var(--amber);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }

@@ -1,0 +1,110 @@
+# =========================
+# NODE MODULES
+# =========================
+node_modules/
+client/node_modules/
+server/node_modules/
+codeEditorServer/node_modules/
+
+# =========================
+# ENV FILES
+# =========================
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+client/.env
+server/.env
+codeEditorServer/.env
+
+# =========================
+# BUILD FILES
+# =========================
+dist/
+build/
+client/dist/
+server/dist/
+
+# =========================
+# LOG FILES
+# =========================
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# =========================
+# OS FILES
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# EDITOR / IDE
+# =========================
+.vscode/
+.idea/
+
+# =========================
+# CACHE FILES
+# =========================
+.cache/
+.parcel-cache/
+.eslintcache
+
+# =========================
+# COVERAGE
+# =========================
+coverage/
+
+# =========================
+# TEMP FILES
+# =========================
+tmp/
+temp/
+
+# =========================
+# DOCKER
+# =========================
+docker-data/
+*.tar
+
+# =========================
+# RUNTIME FILES
+# =========================
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# =========================
+# OPTIONAL GENERATED FILES
+# =========================
+*.log
+
+# =========================
+# REACT / VITE
+# =========================
+vite.svg
+
+# =========================
+# MISC
+# =========================
+*.local
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Python virtual env
+venv/
+backend_rag/venv/
+
+# Chroma DB
+backend_rag/chroma_db/
+
+# Uploaded PDFs
+backend_rag/uploads/

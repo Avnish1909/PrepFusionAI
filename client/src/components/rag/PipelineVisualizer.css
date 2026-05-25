@@ -1,0 +1,132 @@
+.pipeline-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.stage-track {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: 16px 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.stage-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.node-circle {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  background: var(--bg);
+  transition: all 0.3s;
+  position: relative;
+  z-index: 1;
+}
+
+.stage-node.active .node-circle {
+  border-color: var(--amber);
+  box-shadow: 0 0 14px var(--amber-dim);
+  background: rgba(255,179,71,0.08);
+}
+
+.stage-node.done .node-circle {
+  border-color: var(--teal);
+  background: var(--teal-dim);
+  color: var(--teal);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.node-pulse {
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 50%;
+  border: 2px solid var(--amber);
+  animation: pulse-ring 1.4s ease-out infinite;
+  pointer-events: none;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+.node-label {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.stage-node.active .node-label { color: var(--amber); }
+.stage-node.done .node-label { color: var(--teal); }
+
+.stage-connector {
+  flex: 1;
+  height: 2px;
+  background: var(--border);
+  margin-bottom: 20px;
+  transition: background 0.4s;
+}
+
+.stage-connector.filled { background: var(--teal); }
+
+.stage-desc {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--amber);
+  border-radius: 6px;
+  padding: 8px 12px;
+  letter-spacing: 0.3px;
+}
+
+.stage-desc.done-msg {
+  border-left-color: var(--teal);
+  color: var(--teal);
+}
+
+.log-box {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px;
+  max-height: 220px;
+  overflow-y: auto;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.log-line {
+  color: var(--text-muted);
+  line-height: 1.5;
+  transition: color 0.2s;
+}
+
+.log-line:last-child { color: var(--text-secondary); }
+.log-line.ok { color: var(--teal); }
+.log-line.err { color: var(--red); }

@@ -131,59 +131,22 @@ io.on("connection", (socket) => {
 });
 app.post("/compile", async (req, res) => {
 
-    const { code, input } = req.body;
-
-    const jobId = uuid();
-
-    const fileName = `${jobId}.cpp`;
-
-    const tempDir = path.join(__dirname, "temp");
-
-    const filePath = path.join(tempDir, fileName);
-
-    const cleanCode = code.replace(/\u200B/g, "");
-
-fs.writeFileSync(filePath, cleanCode);
-
-const dockerCommand = `docker run --rm -i -v "${tempDir}:/app" gcc:latest sh -c "g++ /app/${fileName} -o /app/${jobId} && printf '${input}' | /app/${jobId}"`;    console.log(dockerCommand);
-
-    exec(dockerCommand, (error, stdout, stderr) => {
-
-        console.log("STDOUT:", stdout);
-        console.log("STDERR:", stderr);
-
-        try {
-
-            fs.unlinkSync(filePath);
-
-        }
-
-        catch (err) {
-
-            console.log(err);
-
-        }
-
-        if (error) {
-
-            console.log("EXEC ERROR:", error);
-
-            return res.json({
-
-                output: stderr || error.message,
-
-            });
-
-        }
+    try {
 
         res.json({
-
-            output: stdout || "No Output",
-
+            output: "Compiler deployment disabled temporarily on production."
         });
 
-    });
+    }
+
+    catch (error) {
+
+        res.status(500).json({
+            error: "Compilation failed"
+        });
+
+    }
 
 });
 const PORT = process.env.PORT || 5001;
-server.listen(PORT, () => console.log(`Server is runnint on port ${PORT}`));
+server.listen(PORT, () => console.log(`Server is running on port ${PORT}`));

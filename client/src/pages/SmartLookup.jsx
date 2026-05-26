@@ -34,7 +34,7 @@ function SmartLookup() {
 
             const res = await axios.post(
 
-                "http://localhost:8000/upload",
+                `${import.meta.env.VITE_RAG_URL}/upload`,
 
                 formData,
 

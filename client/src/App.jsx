@@ -9,7 +9,7 @@ import Notes from './pages/Notes'
 import Pricing from './pages/Pricing'
 import PaymentSuccess from './pages/PaymentSuccess'
 import PaymentFailed from './pages/PaymentFailed'
-export const serverUrl = "http://localhost:5000"
+export const serverUrl = import.meta.env.VITE_SERVER_URL
 import SmartLookup from "./pages/SmartLookup";
 import Navbar from './components/Navbar'
 import CodeEditorHome from "./pages/codeEditor/Home";

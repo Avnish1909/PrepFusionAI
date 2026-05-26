@@ -14,6 +14,6 @@ export const initSocket = async () => {
 
     };
 
-    return io("http://localhost:5001", options);
+    return io(import.meta.env.VITE_SOCKET_URL, options);
 
 };

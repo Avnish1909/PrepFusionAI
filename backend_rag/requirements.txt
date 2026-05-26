@@ -10,3 +10,4 @@ langchain-chroma==0.1.4
 chromadb==0.5.18
 openai==1.54.4
 python-dotenv==1.0.1
+pdfminer.six
